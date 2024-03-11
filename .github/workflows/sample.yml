@@ -1,4 +1,4 @@
-name: test setup CMake
+name: test setup Vulkan
 
 on:
   pull_request:
@@ -16,4 +16,5 @@ jobs:
 
     - name: check Vulkan capabilities
       shell: cmd
-      run: vulkaninfo
+      run: |
+        echo %VULKAN_SDK%

@@ -1,0 +1,19 @@
+name: test setup CMake
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: setup Vulkan
+      uses: milliewalky/setup-vulkan@v1
+
+    - name: check Vulkan capabilities
+      shell: cmd
+      run: vulkaninfo
